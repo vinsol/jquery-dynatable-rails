@@ -1043,23 +1043,23 @@
       }
     };
 
+    // This is done to add custom sorting arrows in table headers.
     this.appendArrowUp = function($link) {
       this.removeArrow($link);
-      $link.append("<span class='dynatable-arrow'> &#9650;</span>");
+      $link.closest('th').addClass('sorting_asc');
     };
 
     this.appendArrowDown = function($link) {
       this.removeArrow($link);
-      $link.append("<span class='dynatable-arrow'> &#9660;</span>");
+      $link.closest('th').addClass('sorting_desc');
     };
 
     this.removeArrow = function($link) {
-      // Not sure why `parent()` is needed, the arrow should be inside the link from `append()` above
-      $link.find('.dynatable-arrow').remove();
+      $link.closest('th').removeClass('sorting_desc sorting_asc');
     };
 
     this.removeAllArrows = function() {
-      obj.$element.find('.dynatable-arrow').remove();
+      obj.$element.find('th').removeClass('sorting_asc sorting_desc');
     };
 
     this.toggleSort = function(e, $link, column) {
