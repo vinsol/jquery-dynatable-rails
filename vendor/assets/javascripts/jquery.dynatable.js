@@ -1217,7 +1217,7 @@
         for (attr in record) {
           if (record.hasOwnProperty(attr)) {
             var attrValue = record[attr];
-            if (typeof(attrValue) === "string" && attrValue.toLowerCase().indexOf(queryValue.toLowerCase()) !== -1) {
+            if (typeof(attrValue) === "string" && $(attrValue).text().trim().toLowerCase().indexOf(queryValue.toLowerCase()) !== -1) {
               contains = true;
               // Don't need to keep searching attributes once found
               break;
