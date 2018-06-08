@@ -9,8 +9,6 @@
  * Date: Tue Jan 02 2014
  */
 
-//require string
-
 (function($) {
   var defaults,
       mergeSettings,
